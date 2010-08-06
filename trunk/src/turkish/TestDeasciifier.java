@@ -1,14 +1,13 @@
 package turkish;
 
 /**
- * Roughly tests deasciifying functionality. 
- * 
- * Planning to convert to a JUnit test.
+ * Roughly tests deasciifying functionality. Planning to convert to a JUnit
+ * test.
  * 
  * @author Ahmet Alp Balkan
- *
+ * 
  */
-public class TestDeasciifier{
+public class TestDeasciifier {
 	public static String[] asciiStrings = {
 			"Acimasizca acelya gorunen bir sacmaliktansa acilip sacilmak...",
 			"Acisindan bagirip cagirarak sacma sozler soylemek.",
@@ -27,8 +26,11 @@ public class TestDeasciifier{
 
 	public static void test() {
 		for (int i = 0; i < asciiStrings.length; i++) {
-			System.out.println("Test " + (i+1) +" : " + new Deasciifier(asciiStrings[i]).convertToTurkish().equals(turkishStrings[i]));
+			System.out.println("Test "
+					+ (i + 1)
+					+ " : "
+					+ new Deasciifier(asciiStrings[i]).convertToTurkish()
+							.equals(turkishStrings[i]));
 		}
 	}
-
 }
