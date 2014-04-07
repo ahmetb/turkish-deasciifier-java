@@ -1,9 +1,0 @@
-Turkish Deasciifier for Java 1.0
-
-Project Page: http://code.google.com/p/turkish-deasciifier/
-
-Usage:
-1) 	Include com.zwitserloot.json package in your classpath: 
-	http://github.com/downloads/rzwitserloot/com.zwitserloot.json/com.zwitserloot.json-1.0.jar
-2) 	Include turkish-deasciifier-1.0.jar in your classpath.
-3)	Ready to use.
