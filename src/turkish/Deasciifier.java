@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -70,29 +71,29 @@ public class Deasciifier {
 	static HashMap<String, String> turkishDowncaseAsciifyTable = new HashMap<String, String>();
 	static {
 		for (String c : uppercaseLetters) {
-			turkishDowncaseAsciifyTable.put(c, c.toLowerCase());
-			turkishDowncaseAsciifyTable.put(c.toLowerCase(), c.toLowerCase());
+			turkishDowncaseAsciifyTable.put(c, c.toLowerCase(Locale.US));
+			turkishDowncaseAsciifyTable.put(c.toLowerCase(Locale.US), c.toLowerCase(Locale.US));
 		}
 
-		turkishAsciifyTable.put("ç", "c");
-		turkishAsciifyTable.put("Ç", "c");
-		turkishAsciifyTable.put("ğ", "g");
-		turkishAsciifyTable.put("Ğ", "g");
-		turkishAsciifyTable.put("ö", "o");
-		turkishAsciifyTable.put("Ö", "o");
-		turkishAsciifyTable.put("ı", "i");
-		turkishAsciifyTable.put("İ", "i");
-		turkishAsciifyTable.put("ş", "s");
-		turkishAsciifyTable.put("Ş", "s");
-		turkishAsciifyTable.put("ü", "u");
-		turkishAsciifyTable.put("Ü", "u");
+        turkishDowncaseAsciifyTable.put("ç", "c");
+        turkishDowncaseAsciifyTable.put("Ç", "c");
+        turkishDowncaseAsciifyTable.put("ğ", "g");
+        turkishDowncaseAsciifyTable.put("Ğ", "g");
+        turkishDowncaseAsciifyTable.put("ö", "o");
+        turkishDowncaseAsciifyTable.put("Ö", "o");
+        turkishDowncaseAsciifyTable.put("ı", "i");
+        turkishDowncaseAsciifyTable.put("İ", "i");
+        turkishDowncaseAsciifyTable.put("ş", "s");
+        turkishDowncaseAsciifyTable.put("Ş", "s");
+        turkishDowncaseAsciifyTable.put("ü", "u");
+        turkishDowncaseAsciifyTable.put("Ü", "u");
 	}
 
 	static HashMap<String, String> turkishUpcaseAccentsTable = new HashMap<String, String>();
 	static {
 		for (String c : uppercaseLetters) {
-			turkishUpcaseAccentsTable.put(c, c.toLowerCase());
-			turkishUpcaseAccentsTable.put(c.toLowerCase(), c.toLowerCase());
+			turkishUpcaseAccentsTable.put(c, c.toLowerCase(Locale.US));
+			turkishUpcaseAccentsTable.put(c.toLowerCase(Locale.US), c.toLowerCase(Locale.US));
 		}
 
 		turkishUpcaseAccentsTable.put("ç", "C");
@@ -262,7 +263,8 @@ public class Deasciifier {
 					space = true;
 				}
 			} else {
-				s = setCharAt(s, i, x);
+				s
+                        = setCharAt(s, i, x);
 				i--;
 				space = false;
 			}
@@ -279,7 +281,7 @@ public class Deasciifier {
 		if (tr == null)
 			tr = ch;
 
-		HashMap<String, Integer> pl = turkishPatternTable.get(tr.toLowerCase());
+		HashMap<String, Integer> pl = turkishPatternTable.get(tr.toLowerCase(Locale.US));
 
 		boolean m = false;
 		if (pl != null) {
